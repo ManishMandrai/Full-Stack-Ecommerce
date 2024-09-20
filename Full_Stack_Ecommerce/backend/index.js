@@ -17,7 +17,7 @@ app.use(cors(
 ));
 
 // Database Connection With MongoDB
-mongoose.connect("--------- paste your mongodb link ----------/e-commerce");
+mongoose.connect("mongodb+srv://Full-stack-Ecommerce:jr9Q0J0rqWnYIZrj@cluster0.ii2zq.mongodb.net/e-commerce");
 
 // paste your mongoDB Connection string above with password
 // password should not contain '@' special character
