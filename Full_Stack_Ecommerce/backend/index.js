@@ -8,7 +8,13 @@ const cors = require("cors");
 const port = process.env.PORT || 4000;
 
 app.use(express.json());
-app.use(cors());
+app.use(cors(
+  {
+    origin: [],
+    methods: ["POST", "GET"],
+    credentials: true
+  }
+));
 
 // Database Connection With MongoDB
 mongoose.connect("--------- paste your mongodb link ----------/e-commerce");
@@ -170,7 +176,7 @@ app.get("/popularinwomen", async (req, res) => {
 // endpoint for getting womens products data
 app.post("/relatedproducts", async (req, res) => {
   console.log("Related Products");
-  const {category} = req.body;
+  const { category } = req.body;
   const products = await Product.find({ category });
   const arr = products.slice(0, 4);
   res.send(arr);
