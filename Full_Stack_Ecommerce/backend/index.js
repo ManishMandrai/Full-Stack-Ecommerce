@@ -10,7 +10,7 @@ const port = process.env.PORT || 4000;
 app.use(express.json());
 app.use(cors(
   {
-    origin: [],
+    origin: [manish-full-stack-ecommercee.vercel.app],
     methods: ["POST", "GET"],
     credentials: true
   }
